@@ -7,6 +7,7 @@ module Sprockets
       end
 
       def call(env)
+        binding.pry
         if env['PATH_INFO'] =~ @assets_regex
           ::Rails.logger.silence { @app.call(env) }
         else
